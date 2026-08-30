@@ -39,7 +39,7 @@ function DocTooltip({ href, label }: { href: string; label: string }) {
         rel="noreferrer"
         aria-label={`See full ${label}`}
         className={cn(
-          "flex items-center gap-1.5 rounded-xl px-3 py-1.5",
+          "flex items-center gap-1.5 rounded-xl px-3 py-1.5 min-h-11",
           "text-[10px] font-bold uppercase tracking-widest text-content-muted",
           "transition-colors duration-200",
           "hover:text-theme-primary hover:bg-theme-primary/10"
@@ -95,7 +95,7 @@ function CopyButton({ code }: { code: string }) {
       onClick={handleCopy}
       aria-label={copied ? "Copied to clipboard" : "Copy code"}
       className={cn(
-        "relative flex items-center gap-2 rounded-xl px-3 py-1.5",
+        "relative flex items-center gap-2 rounded-xl px-3 py-1.5 min-h-11",
         "text-[10px] font-black uppercase tracking-widest",
         "transition-[color,background-color,box-shadow] duration-300",
         copied
@@ -196,7 +196,7 @@ export function CodeIntegrationShowcase({
   const currentTab = tabs.find((t) => t.id === activeTabId) ?? tabs[0]!;
 
   return (
-    <section className="px-6 py-24">
+    <section className="px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-5xl">
         <div className="mb-12 text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-bg-base px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-theme-primary shadow-neu-sunken mb-6">
@@ -219,8 +219,8 @@ export function CodeIntegrationShowcase({
         <div
           className="rounded-[2.5rem] bg-bg-elevated shadow-neu-raised-l2 blueprint-layer"
         >
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-t-[2.5rem] bg-bg-sunken px-6 py-4 shadow-neu-sunken-subtle">
-            <div className="flex items-center gap-1" role="tablist" aria-label="SDK language">
+          <div className="flex min-w-0 max-w-full flex-wrap items-center justify-between gap-3 rounded-t-[2.5rem] bg-bg-sunken px-4 py-4 shadow-neu-sunken-subtle sm:px-6">
+            <div className="flex min-w-0 max-w-full flex-wrap items-center gap-1" role="tablist" aria-label="SDK language">
               {tabs.map((tab) => {
                 const TabIcon = tab.icon;
                 const isActive = tab.id === activeTabId;
