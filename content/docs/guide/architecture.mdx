@@ -1,3 +1,6 @@
+
+
+```
 ---
 title: Architecture
 description: Self-hosted, per-marketplace, non-custodial architecture overview.
@@ -9,13 +12,13 @@ OFFER-HUB is **not a shared SaaS**. Every marketplace runs its own isolated Orch
 
 <Callout type="danger">
   **Non-Negotiable Technical Principles**
+</Callout>
 
 - **Self-host required**
 - **Per-user funds**
 - **Non-custodial escrow**
 - **Required idempotency/correlation**
 - **Server-side secrets only**
-  </Callout>
 
 ## System Overview
 
@@ -32,7 +35,7 @@ flowchart TB
     Stellar --> Trustless[Trustless Work Soroban Contracts]
     A_Orch -.->|Isolated| A_DB[(PostgreSQL A)]
     B_Orch -.->|Isolated| B_DB[(PostgreSQL B)]
-`
+```
 
 ## Next Steps
 
@@ -40,3 +43,5 @@ flowchart TB
 - [Orchestrator Guide](/docs/guide/orchestrator)
 - [Self-Hosting Guide](/docs/guide/self-hosting)
 ```
+
+Changes: list moved OUTSIDE Callout, mermaid closing fixed to triple backticks.
